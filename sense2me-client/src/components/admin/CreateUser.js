@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 
 import "./CreateUser.css";
 
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 function CreateUser(){
 
@@ -35,17 +35,17 @@ function CreateUser(){
 
     //hash and salt
 
-    bcrypt.hash(password2, salt, function(err, hash) {
-      if (err) {
-        console.log(err)
-      } else {
-        // save the hash and salt to the database
-        const passwordHash = hash;
-        const passwordSalt = salt;
-        console.log('password hash:', passwordHash);
-        console.log('password salt:', passwordSalt);
-      }
-    });
+//    bcrypt.hash(password2, salt, function(err, hash) {
+//      if (err) {
+//        console.log(err)
+//      } else {
+//        // save the hash and salt to the database
+//        const passwordHash = hash;
+//        const passwordSalt = salt;
+//        console.log('password hash:', passwordHash);
+//        console.log('password salt:', passwordSalt);
+//      }
+//    });
 
     fetch(process.env.REACT_APP_API + "/user", {
       mode: "cors", 
