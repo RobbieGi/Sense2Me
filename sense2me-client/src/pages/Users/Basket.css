@@ -1,0 +1,46 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .basket-img {
+    display: block;
+    max-width: 100%;
+    max-height: 50px;
+  }
+
+  /* Remove display: flex from .wrapper */
+.wrapper {
+  width: 100%;
+  /* display: flex; Remove this line */
+  justify-content: center;
+}
+
+.content-main-basket {
+  margin-top: 2em;
+  width: 50%;
+  margin-left: auto; /* Center the content horizontally */
+  margin-right: auto; /* Center the content horizontally */
+}
+
+/* Adjust width of #basket-CheckOut button */
+#basket-CheckOut {
+  width: 100%; /* Use 100% width to match the container */
+}
+
+.button {
+  /* Remove display: flex from .button */
+  /* display: flex; Remove this line */
+  justify-content: center;
+}

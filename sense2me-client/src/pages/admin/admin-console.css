@@ -1,6 +1,6 @@
 .sidebar{
     background-color: #495057;
-    width: 10vw;
+    width: 10%;
     height: 90vh;
     color: white;
     float: left;
@@ -37,6 +37,6 @@ ul{
 
 .content-admin{
     width: 90%;
-    height: 90vh;
     float: right;
+    height: 90vh;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Verification</title>
+</head>
+<body>
+  <h1>Email Verification</h1>
+  <p>Thank you for registering. To complete the registration process, please click the button below to verify your email address:</p>
+  <a href="#" id="verifyButton">Verify Email Address</a>
+
+  <script>
+    // Get the email address from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get("email");
+
+    // Add event listener to the Verify Email Address button
+    const verifyButton = document.getElementById("verifyButton");
+    verifyButton.addEventListener("click", async () => {
+      try {
+        // Call the backend Lambda function to verify the email address
+        await fetch("https://your-verify-email-lambda-endpoint", {
+          method: "POST",
+          body: JSON.stringify({ email }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        // Display a success message or redirect to a success page
+        alert("Email address verified successfully!");
+        // You can redirect to a success page if desired
+      } catch (error) {
+        console.error("Error verifying email address:", error);
+        // Display an error message or redirect to an error page
+        alert("An error occurred while verifying the email address.");
+        // You can redirect to an error page if desired
+      }
+    });
+  </script>
+</body>
+</html>

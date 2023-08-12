@@ -19,10 +19,30 @@
     align-items: center;
     width: 30vw;
   }
-  
+
+  .links-right{
+    display: flex;
+    width: 20vw;
+    align-items: center;
+  }
+
+  .login{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .loggedIn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%
+  }
+
   .react-link{
     text-decoration: none;
     color: inherit;
+    margin: 0.2em;
   }
   
   .react-link:hover{
@@ -34,4 +54,10 @@
 .active:hover{
   color: grey;
   font-weight: bold;
+}
+
+#basket{
+  font-size: 1.6em;
+  width: 1em;
+  margin-right: 0.5em;
 }

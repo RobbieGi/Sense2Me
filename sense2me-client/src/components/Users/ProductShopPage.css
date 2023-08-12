@@ -1,0 +1,21 @@
+/*This is for the shop page*/
+.product-img-sml{
+    width: 18em;
+    margin-left: 0.185em;
+    margin-top: 0.18em;
+    height: 175px;
+    border-top-right-radius: 1.9em;
+    border-top-left-radius: 1.9em;
+  }
+  
+  .product-wrapper{
+    width:18.4em;
+    height: 15.5em;
+    border: 1px solid black;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    text-decoration: none;
+  }

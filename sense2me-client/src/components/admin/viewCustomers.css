@@ -1,0 +1,21 @@
+.movementBtns{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.movementBtns:hover{
+    background-color: rgb(201, 201, 201);
+}
+
+.content-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.viewCustomers{
+    width: 100%;
+}
+
+.form{
+    width: 16%;
+}

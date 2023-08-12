@@ -1,0 +1,32 @@
+ .product-details{
+    margin-left: 20px;
+    width: 90%;
+    height: 4em;
+  }
+  
+  .price-wrapper{
+    background-color: yellow;
+    border-radius: 0.5em;
+    height: 2em
+  }
+  
+  .price-tag{
+    margin:0.19em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1em;
+  }
+
+  .price-wrapper:hover{
+    background-color: rgb(37, 255, 37);
+  }
+
+  .top{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bottom{
+    margin: 0;
+  }
