@@ -10,7 +10,7 @@
   
   .product-wrapper{
     width:18.4em;
-    height: 15.5em;
+    height: 16.5em;
     border: 1px solid black;
     border-top-right-radius: 2em;
     border-top-left-radius: 2em;
@@ -18,4 +18,13 @@
     display: flex;
     flex-flow: column wrap;
     text-decoration: none;
+  }
+
+  .bottom {
+    margin-top: 0; /* Add margin to separate the stock amount from the top section */
+  }
+  
+  .inventory-count {
+    margin: 0;
+    font-size: 1.1em; /* Adjust font size if needed */
   }

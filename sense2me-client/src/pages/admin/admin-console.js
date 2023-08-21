@@ -12,6 +12,7 @@ import CreateAdmin from "../../components/admin/CreateAdmin";
 import UpdateProduct from "../../components/admin/UpdateProduct";
 import CreateOrder from "../../components/admin/CreateOrder";
 import ViewCustomers from "../../components/admin/viewCustomers";
+import DeleteProduct from "../../components/admin/DeleteProducts";
 
 function AdminConsole(){
 
@@ -41,6 +42,8 @@ function AdminConsole(){
             return <CreateOrder />;
         case "ViewCustomers":
             return <ViewCustomers />;
+        case "DeleteProduct":
+            return 
         }
     }
 
@@ -52,7 +55,7 @@ function AdminConsole(){
                 <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("CreateAdmin")}>Create Admin</h3> 
                 <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("AddProduct")}>Add Product</h3>  
                 <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("UpdateProduct")}>Update Product</h3>
-                <h3 className="sidebar-margin-lrg sidebar-btn">Delete Product</h3> 
+                <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("DeleteProduct")}>Delete Product</h3> 
                 <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("ViewCustomers")}>View Customers</h3>  
                 <h3 className="sidebar-margin-lrg sidebar-btn" onClick={() => setCurrentComponent("CreateOrder")}>View Orders</h3>
             </div>

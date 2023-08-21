@@ -9,7 +9,7 @@ function ViewCustomers(){
     const [currentIndex, setCurrentIndex] = useState(0);
     
     useEffect(() => {
-        fetch(process.env.REACT_APP_API + "/user")
+        fetch("https://d93b7k76j9.execute-api.eu-west-1.amazonaws.com/default/getAllUsersDalek")
         .then(res => {
             if (!res.ok){
                 throw new Error("Request failed with status: " + res.status);

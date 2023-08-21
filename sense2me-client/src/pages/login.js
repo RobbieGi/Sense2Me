@@ -7,7 +7,7 @@ import NavBar from "../components/NavBar";
 
 function Login(){
 
-  const [users, setUsers] = useState([])
+  var users = []
 
     useEffect(() => {
         const form = document.getElementById("login");
@@ -27,7 +27,7 @@ function Login(){
           .then((response) => response.json())
           .then((data) => {
             console.log("body", JSON.parse(data.body))
-            setUsers(JSON.parse(data.body));
+            users = JSON.parse(data.body);
             console.log(JSON.parse(data.body));
           })
           .catch((error) => {
@@ -72,26 +72,25 @@ function Login(){
     if (data.error) {
       alert(data.error);
     } else {
-      const isAdmin = JSON.parse(data.body).isAdmin;
       console.log("Users Array", users)
 
       for (let i = 0; i < users.length; i++) {
         console.log("Input: ",username, "DB ", users[i].userID.S)
         if(username === users[i].userID.S){
           sessionStorage.setItem("email", users[i].email.S)
+          sessionStorage.setItem('isAdmin', users[i].isAdmin.BOOL);
         }
       }
 
       sessionStorage.setItem('name', username);
-      sessionStorage.setItem('isAdmin', isAdmin);
       sessionStorage.setItem('isAuth', true);
       
       document.getElementById("login").reset();
-      // if(isAdmin){
-      //   window.location.href = "/admin-console"
-      // }else{
-      //   window.location.href = "/shop"
-      // }
+      if(sessionStorage.getItem("isAdmin")){
+         window.location.href = "/admin-console"
+      }else{
+        window.location.href = "/shop"
+      }
     }
   })
   .catch(error => {

@@ -11,6 +11,7 @@ import ContactUs from "./pages/contact-us";
 import Login from "./pages/login"
 import CreateUser from "./pages/Users/CreateUser"
 import Basket from "./pages/Users/Basket";
+import ChangeDetails from "./components/Users/changeDetails";
 
 //Admin Pages
 import AddProduct from "./components/admin/AddProduct";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admin-console" element={<AdminConsole />}/>
         <Route path="/createUser" element={<CreateUser />}></Route>
         <Route path="/basket" element={<Basket />}></Route>
+        <Route path="/change-details" element={<ChangeDetails />}></Route>
       </Routes>
 </BrowserRouter>
     

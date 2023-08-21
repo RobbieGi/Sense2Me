@@ -1,12 +1,12 @@
 .nav-back{
-    background-color: blue;
+    background: radial-gradient(circle, #66a3ff, #0044cc);
     width: 100vw;
     height: 10vh;
     color: #F1E603;
   }
   
   .nav{
-    width: 99vw;
+    width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -17,26 +17,32 @@
     display:flex;
     justify-content: space-around;
     align-items: center;
-    width: 30vw;
+    width: 40vw;
   }
 
   .links-right{
+    height: 10vh;
     display: flex;
-    width: 20vw;
+    width: 25vw;
     align-items: center;
+    display: flex;
+    justify-content: space-around;
   }
 
   .login{
     width: 100%;
     display: flex;
     justify-content: end;
+    position: relative;
   }
 
   .loggedIn{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%
+    width: 100%;
+    position: relative;
+    padding: 0.5em  
   }
 
   .react-link{
@@ -45,9 +51,9 @@
     margin: 0.2em;
   }
   
-  .react-link:hover{
+  .react-link:hover {
     color: #FFBF00;
-    cursor: pointer;
+    text-decoration: underline;
   }
 
   .active,
@@ -60,4 +66,159 @@
   font-size: 1.6em;
   width: 1em;
   margin-right: 0.5em;
+}
+
+.icon {
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+
+.icon:hover {
+  color: #FFBF00;
+  cursor: pointer;
+}
+
+/* Default styles */
+.side-nav {
+  display: none; /* Hide by default for larger screens */
+}
+
+.mobile-menu-icon {
+  /* Add these styles */
+  position: absolute;
+  top: 50%;
+  left: 5rem; /* Adjust as needed */
+  transform: translateY(-50%);
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    position: relative;
+    width: 100%
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    position: relative; /* Add this line to create a new stacking context */
+    z-index: 101; /* Set a higher z-index to make it appear above .links.open */
+    position: absolute;
+    top: 5%;
+    transform: translateY(-50%) translateX(-50%); /* Adjust to center horizontally */
+    left: 53%; /* Adjust the distance from the left edge */
+  }
+
+  .menu-icon span {
+    display: block;
+    height: 2px;
+    width: 25px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+    margin-right: -0.5rem; /* Adjust this value to move the "X" button to the left */
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding-top: 10vh;
+    padding-right: 1.5rem
+  }
+
+  .links.open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire width of the screen */
+    height: 100%; /* Cover the entire height of the screen */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+    z-index: 100; /* Higher z-index to cover other content */
+    margin: 0
+  }
+
+  /* Additional styling for the links in the side navigation */
+  .links a {
+    padding: 15px 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Styling for the open/close menu icon */
+  .menu-icon span {
+    display: block;
+    height: 2px;
+    width: 25px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  .menu-icon.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .brand {
+    width: 98vw;
+    margin-bottom: 1rem; /* Add some spacing below the brand */
+  }
+
+  .main-links {
+    flex-grow: 1; /* Take available vertical space in the middle */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem; /* Add some spacing to the links */
+  }
+
+  .bottom-links {
+    /* Align bottom links to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the links horizontally */
+    justify-content: flex-start; /* Push them to the top */
+    height: 35%; /* Take up remaining height */
+    padding: 1rem; /* Add some spacing to the links */
+    margin-top: 0.5rem; /* Adjust the margin to push them up */
+  }
+
+  .bottom-links h2 {
+    margin: 1.5em 0; /* Adjust vertical spacing of the links */
+  }
+
+  .welcome-message {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make the text bold */
+    padding-bottom: 1em;
+  }  
+
+  .loggedIn {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Keep this property */
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Keep this property */
+  }
 }
