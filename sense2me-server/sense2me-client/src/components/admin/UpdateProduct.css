@@ -1,0 +1,9 @@
+.container{
+    position: relative;
+    top: -10%
+}
+
+#sku{
+    background-color: black;
+    color: white;
+}
