@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "start:heroku": "node scripts/start.js",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
