@@ -12,7 +12,7 @@ import CreateAdmin from "../../components/admin/CreateAdmin";
 import UpdateProduct from "../../components/admin/UpdateProduct";
 import CreateOrder from "../../components/admin/CreateOrder";
 import ViewCustomers from "../../components/admin/viewCustomers";
-import DeleteProduct from "../../components/admin/deleteProduct";
+import DeleteProduct from "../../components/admin/DeleteProducts";
 import ChangeDetails from "../../components/Users/changeDetails";
 
 function AdminConsole(){
