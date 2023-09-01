@@ -4,7 +4,7 @@ import NavBar from "../NavBar";
 
 import "./changeDetails.css"
 
-const crypto = require('crypto');
+const crypto = require('crypto-browserify');
 
 function ChangeDetails() {
   const [isLoading, setIsLoading] = useState(true); // Add a loading state

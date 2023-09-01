@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar";
 import "./CreateUser.css";
 
 //hashings & salt
-const crypto = require('crypto');
+const crypto = require('crypto-browserify');
 
 function CreateUser(){
 
