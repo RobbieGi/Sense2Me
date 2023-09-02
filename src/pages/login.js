@@ -7,7 +7,7 @@ function Login() {
   const [users, setUsers] = useState([]);
   
   useEffect(() => {
-    fetch('https://d93b7k76j9.execute-api.eu-west-1.amazonaws.com/default/getAllUsersDalek', {
+    fetch('https://2wk9pnxky7.execute-api.eu-west-1.amazonaws.com/default/getAllUsersDalekV2', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -15,7 +15,8 @@ function Login() {
     })
     .then(response => response.json())
     .then(data => {
-      const parsedData = JSON.parse(data.body);
+      console.log(data)
+      const parsedData = data;
       console.log("body", parsedData);
       setUsers(parsedData);
     })
@@ -25,31 +26,35 @@ function Login() {
   }, []);
 
   const handleForm = event => {
+
+    console.log(users)
     event.preventDefault();
     const username = document.getElementById("username").value;
     const password1 = document.getElementById("password").value;
-
+  
     if (!username || !password1) {
       window.alert("All fields are required.");
       return;
     }
-
-    const foundUser = users.find(user => user.userID.S === username);
-
-    if (foundUser) {
-      sessionStorage.setItem("email", foundUser.email.S);
-      sessionStorage.setItem('name', username);
-      sessionStorage.setItem('isAdmin', foundUser.isAdmin.BOOL);
-      sessionStorage.setItem('isAuth', true);
-      // Redirect to the appropriate page based on the user type
-      if (foundUser.isAdmin.BOOL) {
-        window.location.href = "/admin-console";
+  
+    // Check if users array has data before using find method
+      const foundUser = users.find(user => user.userID.S === username);
+  
+      if (foundUser) {
+        sessionStorage.setItem("email", foundUser.email.S);
+        sessionStorage.setItem('name', username);
+        sessionStorage.setItem('isAdmin', foundUser.isAdmin.BOOL);
+        sessionStorage.setItem('isAuth', true);
+        // Redirect to the appropriate page based on the user type
+        if (foundUser.isAdmin.BOOL) {
+          window.location.href = "/admin-console";
+        } else {
+          window.location.href = "/shop";
+        }
       } else {
-        window.location.href = "/shop";
+        window.alert("No Users Found!!!");
       }
-    } else {
-      window.alert("No Users Found!!!");
-    }
+  
     document.getElementById("login").reset();
   }
 

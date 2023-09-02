@@ -8,12 +8,9 @@
 }
   
   .price-wrapper {
-    background-color: yellow;
     border-radius: 0.5em;
     display: flex;
     align-items: center;
-    padding: 0.2em 0.5em; /* Add padding to the button */
-    cursor: pointer;
   }
   
   .price-tag {
@@ -21,18 +18,14 @@
     font-size: 1em;
     margin-left: 0.3em; /* Add margin between the plus icon and the price */
   }
-  
-  .price-wrapper:hover {
-    background-color: rgb(37, 255, 37);
-  }
 
   .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
   }
 
   .bottom {
     margin: 0; /* Remove margin to align stock count properly */
     font-size: 0.9em; /* Adjust font size as needed */
+    display: flex;
+    justify-content: space-between;
   }
