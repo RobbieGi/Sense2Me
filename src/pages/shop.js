@@ -156,7 +156,7 @@ function Shop() {
           ) : (
             filteredItems.map((item) => (
               <div key={item.sku.S} onClick={() => openModal(item)}>
-                <ProductShopPage items={item} remainingStock={calculateRemainingStock(item) }/>
+                <ProductShopPage items={item} remainingStock={calculateRemainingStock(item)} />
               </div>
             ))
           )}
